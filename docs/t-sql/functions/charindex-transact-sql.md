@@ -61,7 +61,7 @@ CHARINDEX performs comparisons based on the input collation. To perform a compar
   
 The starting position returned is 1-based, not 0-based.
   
-0x0000 (**char(0)**) is an undefined character in Windows collations and cannot be included in CHARINDEX.
+0x0000 (**char(0)**) is an undefined character in Windows collations and cannot be included in CHARINDEX, unless an appropriate collation is applied: CHARINDEX((n)char(0) COLLATE Latin1_General_100_BIN2, 'string containing (n)char(0)').
   
 ## Supplementary Characters (Surrogate Pairs)  
 When using SC collations, both *start_location* and the return value count surrogate pairs as one character, not two. For more information, see [Collation and Unicode Support](../../relational-databases/collations/collation-and-unicode-support.md).
